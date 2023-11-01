@@ -3,7 +3,6 @@ package org.example.parenthesis.check.assesment;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class ParenthesisCheckTest {
@@ -75,7 +74,7 @@ public class ParenthesisCheckTest {
     }
 
     private static class Pair {
-        final String start;
+        final char start;
         final String end;
 
         public Pair(char start, char end) {
