@@ -90,6 +90,11 @@ public class ParenthesisCheckTest {
         Assertions.assertEquals(OK, checkParenthesis("()"));
     }
 
+    @Test
+    void checkMultipleParenthesisAreOk() {
+        Assertions.assertEquals(OK, checkParenthesis("()"));
+    }
+
     private static class Pair {
         final char start;
         final char end;
