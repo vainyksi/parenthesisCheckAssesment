@@ -23,7 +23,6 @@ public class ParenthesisCheckTest {
                         return WRONG;
                     }
 
-
 //                    if (isCorrectEnd(character, parenthesisConsumed.peek())) {
                         parenthesisConsumed.pop();
 //                    }
