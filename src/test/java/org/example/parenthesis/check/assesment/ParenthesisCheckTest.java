@@ -17,14 +17,16 @@ public class ParenthesisCheckTest {
             Character character = str.charAt(i);
             if (isStartParenthesis(character)) {
                 parenthesisConsumed.push(character);
-            } else if (isEndParenthesis(character, parenthesisConsumed)) {
-                if (parenthesisConsumed.isEmpty()) {
-                    return WRONG;
-                }
+            } else {
+                if (isEndParenthesis(character)) {
+                    if (parenthesisConsumed.isEmpty()) {
+                        return WRONG;
+                    }
 //                if (isCorrectType(character, parenthesisConsumed)) {
 //                    return WRONG;
 //                }
-                parenthesisConsumed.pop();
+                    parenthesisConsumed.pop();
+                }
             }
         }
 
@@ -46,15 +48,8 @@ public class ParenthesisCheckTest {
     }
 
     private static boolean isEndParenthesis(Character character, Stack<Character> consumed) {
-        Character peek = consumed.peek();
 
-        if (peek.equals('(')) {
-            return character.equals(')');
-        } else if (peek.equals('[')) {
-            return character.equals('}');
-        } else if (peek.equals('{')) {
-            return character.equals('}');
-        }
+
 
         return List.of(')', ']', '}').contains(character);
     }
