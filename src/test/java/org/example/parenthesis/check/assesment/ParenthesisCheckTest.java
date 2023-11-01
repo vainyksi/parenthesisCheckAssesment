@@ -41,8 +41,13 @@ public class ParenthesisCheckTest {
     }
 
     @Test
-    void checkBasicParenthesisNotClosed() {
+    void checkParenthesisNotClosed() {
         Assertions.assertEquals(WRONG, checkParenthesis("("));
+        Assertions.assertEquals(WRONG, checkParenthesis(")"));
+        Assertions.assertEquals(WRONG, checkParenthesis("["));
+        Assertions.assertEquals(WRONG, checkParenthesis("]"));
+        Assertions.assertEquals(WRONG, checkParenthesis("{"));
+        Assertions.assertEquals(WRONG, checkParenthesis("}"));
     }
 
     @Test
