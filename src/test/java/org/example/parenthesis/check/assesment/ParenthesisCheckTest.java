@@ -31,6 +31,10 @@ public class ParenthesisCheckTest {
 //        }
     }
 
+    private static boolean isEndParenthesis(Character character) {
+        return List.of(')', ']', '}').contains(character);
+    }
+
     private static boolean isStartParenthesis(Character character) {
         return List.of('(', '[', '{').contains(character);
     }
