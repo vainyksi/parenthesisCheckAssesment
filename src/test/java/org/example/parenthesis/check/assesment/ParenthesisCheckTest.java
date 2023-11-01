@@ -47,10 +47,6 @@ public class ParenthesisCheckTest {
                 || str.contains("}");
     }
 
-    private static boolean isaBoolean(int value, Pair pair) {
-        return ;
-    }
-
     @Test
     void checkParenthesisOrderAndParity() {
         String strPositive = "xxx(aaa)ahoj(tuky[tuk]){hoj}";
