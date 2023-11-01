@@ -29,6 +29,7 @@ public class ParenthesisCheckTest {
     }
 
     private static boolean isEndParenthesisOfPreviouslyConsumed(Character character, Stack<Character> consumed) {
+        Character previouslyConsumed = consumed.peek();
         return List.of(')', ']', '}').contains(character);
     }
 
