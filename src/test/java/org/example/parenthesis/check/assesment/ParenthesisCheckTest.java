@@ -102,6 +102,12 @@ public class ParenthesisCheckTest {
         Assertions.assertEquals(OK, checkParenthesis("{a(b[c]b)a}"));
     }
 
+    @Test
+    void checkCombinedParenthesisAreWrong() {
+        Assertions.assertEquals(OK, checkParenthesis("([)]"));
+//        Assertions.assertEquals(OK, checkParenthesis("{a(b[c]b)a}"));
+    }
+
     private static class Pair {
         final char start;
         final char end;
