@@ -94,7 +94,7 @@ public class ParenthesisCheckTest {
     @Test
     void checkCombinedParenthesisAreWrong() {
         Assertions.assertEquals(WRONG, checkParenthesis("([)]"));
-//        Assertions.assertEquals(OK, checkParenthesis("{a(b[c]b)a}"));
+        Assertions.assertEquals(OK, checkParenthesis("{a(b[c]b)a}"));
     }
 
 }
