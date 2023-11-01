@@ -28,7 +28,7 @@ public class ParenthesisCheckTest {
         return parenthesisConsumed.isEmpty() ? OK : WRONG;
     }
 
-    private static boolean isEndParenthesis(Character character) {
+    private static boolean isEndParenthesis(Character character, Character peek) {
         return List.of(')', ']', '}').contains(character);
     }
 
