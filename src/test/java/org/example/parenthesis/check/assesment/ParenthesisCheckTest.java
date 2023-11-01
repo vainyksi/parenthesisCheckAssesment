@@ -3,7 +3,7 @@ package org.example.parenthesis.check.assesment;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import java.util.List;
+import java.util.Set;
 import java.util.Stack;
 
 public class ParenthesisCheckTest {
@@ -46,11 +46,11 @@ public class ParenthesisCheckTest {
     }
 
     private static boolean isEndParenthesis(Character character) {
-        return List.of(')', ']', '}').contains(character);
+        return Set.of(')', ']', '}').contains(character);
     }
 
     private static boolean isStartParenthesis(Character character) {
-        return List.of('(', '[', '{').contains(character);
+        return Set.of('(', '[', '{').contains(character);
     }
 
     @Test
