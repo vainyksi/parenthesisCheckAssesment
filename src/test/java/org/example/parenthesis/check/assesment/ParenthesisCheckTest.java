@@ -1,8 +1,12 @@
 package org.example.parenthesis.check.assesment;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class ParenthesisCheckTest {
+
+    private static final int OK = 1;
+    private static final int WRONG = 0;
 
     public static int checkParenthesis(String str) {
         return 0;
@@ -15,7 +19,7 @@ public class ParenthesisCheckTest {
     }
 
     @Test
-    void () {
-
+    void checkEmptyString() {
+        Assertions.assertEquals(OK, checkParenthesis(""));
     }
 }
