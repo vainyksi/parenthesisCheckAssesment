@@ -11,7 +11,7 @@ public class ParenthesisCheckTest {
     private static final int WRONG = 0;
 
     public static int checkParenthesis(String str) {
-        ArrayList<ParenthesisPairs> parenthesisPairs = new ArrayList<ParenthesisPairs>();
+        ArrayList<ParenthesisPair> parenthesisPairs = new ArrayList<ParenthesisPair>();
         parenthesisPairs
         return str.contains();
     }
@@ -27,6 +27,6 @@ public class ParenthesisCheckTest {
         Assertions.assertEquals(OK, checkParenthesis(""));
     }
 
-    private static class ParenthesisPairs {
+    private static class ParenthesisPair {
     }
 }
