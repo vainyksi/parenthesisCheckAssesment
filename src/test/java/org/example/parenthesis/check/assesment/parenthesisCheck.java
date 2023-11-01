@@ -2,7 +2,7 @@ package org.example.parenthesis.check.assesment;
 
 import org.junit.jupiter.api.Test;
 
-public class ParenthesisCheck {
+public class parenthesisCheck {
 
 
 
