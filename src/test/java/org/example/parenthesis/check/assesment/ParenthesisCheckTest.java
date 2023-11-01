@@ -45,20 +45,6 @@ public class ParenthesisCheckTest {
         return false;
     }
 
-    private static boolean isCorrectType(Character character, Stack<Character> parenthesisConsumed) {
-        Character endParenthesis = getEndParenthesisForLastConsumed(parenthesisConsumed.peek());
-        return character.equals(endParenthesis);
-    }
-
-    private static Character getEndParenthesisForLastConsumed(Character startParenthesis) {
-        return switch (startParenthesis) {
-            case '(' -> ')';
-            case '[' -> ']';
-            case '{' -> '}';
-            default -> ' ';
-        };
-    }
-
     private static boolean isEndParenthesis(Character character) {
         return List.of(')', ']', '}').contains(character);
     }
