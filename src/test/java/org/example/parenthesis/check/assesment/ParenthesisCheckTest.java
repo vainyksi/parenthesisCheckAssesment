@@ -4,7 +4,9 @@ import org.junit.jupiter.api.Test;
 
 public class ParenthesisCheckTest {
 
-
+    public static int checkParenthesis(String str) {
+        return 0;
+    }
 
     @Test
     void checkParenthesisOrderAndParity() {
