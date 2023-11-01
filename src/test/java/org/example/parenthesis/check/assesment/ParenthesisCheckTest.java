@@ -3,13 +3,17 @@ package org.example.parenthesis.check.assesment;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+
 public class ParenthesisCheckTest {
 
     private static final int OK = 1;
     private static final int WRONG = 0;
 
     public static int checkParenthesis(String str) {
-        return 0;
+        ArrayList<ParenthesisPairs> parenthesisPairs = new ArrayList<ParenthesisPairs>();
+        parenthesisPairs
+        return str.contains();
     }
 
     @Test
@@ -21,5 +25,8 @@ public class ParenthesisCheckTest {
     @Test
     void checkEmptyString() {
         Assertions.assertEquals(OK, checkParenthesis(""));
+    }
+
+    private static class ParenthesisPairs {
     }
 }
