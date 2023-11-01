@@ -25,19 +25,13 @@ public class ParenthesisCheckTest {
     }
 
     private static boolean containsParenthesis(String str) {
-        List<Pair> listOfPairs = List.of(
-                new Pair("(", ")"),
-                new Pair("[", "]"),
-                new Pair("{", "}")
-        );
-
-//        str.chars().forEach(System.out::println);
-//        listOfPairs.get(0).start.chars().forEach(System.out::println);
-        System.out.println(str);
-        System.out.println(listOfPairs);
-        System.out.println(
-            str.chars().anyMatch(value -> listOfPairs.stream().anyMatch(pair -> pair.contains(value)))
-        );
+//        List<Pair> listOfPairs = List.of(
+//                new Pair("(", ")"),
+//                new Pair("[", "]"),
+//                new Pair("{", "}")
+//        );
+//
+//        return str.chars().anyMatch(charIntValue -> listOfPairs.stream().anyMatch(pair -> pair.contains(charIntValue)));
 
         return str.contains("(")
                 || str.contains(")")
