@@ -46,6 +46,14 @@ public class ParenthesisCheckTest {
     }
 
     private static boolean isEndParenthesis(Character character, Character peek) {
+        if (peek.equals('(')) {
+            return character.equals(')');
+        } else if (peek.equals('[')) {
+            return character.equals('}');
+        } else if (peek.equals('{')) {
+            return character.equals('}');
+        }
+
         return List.of(')', ']', '}').contains(character);
     }
 
