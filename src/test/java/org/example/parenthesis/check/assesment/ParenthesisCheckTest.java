@@ -53,16 +53,6 @@ public class ParenthesisCheckTest {
         return List.of('(', '[', '{').contains(character);
     }
 
-    private static boolean containsParenthesis(String str) {
-
-        return str.contains("(")
-                || str.contains(")")
-                || str.contains("[")
-                || str.contains("]")
-                || str.contains("{")
-                || str.contains("}");
-    }
-
     @Test
     void checkParenthesisOrderAndParity() {
         String strPositive = "xxx(aaa)ahoj(tuky[tuk]){hoj}";
