@@ -47,7 +47,7 @@ public class ParenthesisCheckTest {
         };
     }
 
-    private static boolean isEndParenthesis(Character character, Stack<Character> consumed) {
+    private static boolean isEndParenthesis(Character character) {
 
 
 
