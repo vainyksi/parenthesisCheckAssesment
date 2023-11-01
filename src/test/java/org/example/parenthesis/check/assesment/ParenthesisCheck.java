@@ -1,2 +1,4 @@
-package org.example.parenthesis.check.assesment;public class ParenthesisCheck {
+package org.example.parenthesis.check.assesment;
+
+public class ParenthesisCheck {
 }
