@@ -17,7 +17,7 @@ public class ParenthesisCheckTest {
             Character character = str.charAt(i);
             if (isStartParenthesis(character)) {
                 parenthesisConsumed.push(character);
-            } else if (isEndParenthesisOfPreviouslyCOnsumed(character)) {
+            } else if (isEndParenthesisOfPreviouslyCOnsumed(character, parenthesisConsumed)) {
                 if (parenthesisConsumed.isEmpty()) {
                     return WRONG;
                 }
