@@ -53,11 +53,6 @@ public class ParenthesisCheckTest {
         return List.of('(', '[', '{').contains(character);
     }
 
-    private static int checkParenthesisParity(String str) {
-
-        return WRONG;
-    }
-
     private static boolean containsParenthesis(String str) {
 
         return str.contains("(")
