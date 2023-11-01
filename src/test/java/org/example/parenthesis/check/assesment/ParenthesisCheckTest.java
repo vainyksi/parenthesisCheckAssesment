@@ -36,7 +36,7 @@ public class ParenthesisCheckTest {
         System.out.println(str);
         System.out.println(listOfPairs);
         System.out.println(
-            str.chars().anyMatch(value -> listOfPairs.stream().anyMatch(pair -> pair.start==value || pair.end==value))
+            str.chars().anyMatch(value -> listOfPairs.stream().anyMatch(pair -> pair.contains(value)))
         );
 
         return str.contains("(")
@@ -45,6 +45,10 @@ public class ParenthesisCheckTest {
                 || str.contains("]")
                 || str.contains("{")
                 || str.contains("}");
+    }
+
+    private static boolean isaBoolean(int value, Pair pair) {
+        return ;
     }
 
     @Test
@@ -93,6 +97,10 @@ public class ParenthesisCheckTest {
                     "start=" + start +
                     ", end=" + end +
                     '}';
+        }
+
+        public boolean contains(int charIntValue) {
+            return this.start == charIntValue || this.end == charIntValue;
         }
 //        ArrayList<ParenthesisPair> parenthesisPairs = new ArrayList<ParenthesisPair>();
 //        for (ParenthesisPair parenthesisPair : parenthesisPairs) {
