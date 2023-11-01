@@ -17,7 +17,7 @@ public class ParenthesisCheckTest {
             Character character = str.charAt(i);
             if (isStartParenthesis(character)) {
                 parenthesisConsumed.push(character);
-            } else if (isEndParenthesisOfPreviouslyCOnsumed(character, parenthesisConsumed)) {
+            } else if (isEndParenthesisOfPreviouslyConsumed(character, parenthesisConsumed)) {
                 if (parenthesisConsumed.isEmpty()) {
                     return WRONG;
                 }
@@ -28,7 +28,7 @@ public class ParenthesisCheckTest {
         return parenthesisConsumed.isEmpty() ? OK : WRONG;
     }
 
-    private static boolean isEndParenthesisOfPreviouslyCOnsumed(Character character, Stack<Character> consumed) {
+    private static boolean isEndParenthesisOfPreviouslyConsumed(Character character, Stack<Character> consumed) {
         return List.of(')', ']', '}').contains(character);
     }
 
