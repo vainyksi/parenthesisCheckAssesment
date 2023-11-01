@@ -37,7 +37,7 @@ public class ParenthesisCheckTest {
         if (lastOpenParenthesis.equals('(')) {
             return character.equals(')');
         } else if (lastOpenParenthesis.equals('[')) {
-            return character.equals('}');
+            return character.equals(']');
         } else if (lastOpenParenthesis.equals('{')) {
             return character.equals('}');
         }
