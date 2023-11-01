@@ -21,9 +21,9 @@ public class ParenthesisCheckTest {
                 if (parenthesisConsumed.isEmpty()) {
                     return WRONG;
                 }
-                if (isCorrectType(character, parenthesisConsumed)) {
-                    return WRONG;
-                }
+//                if (isCorrectType(character, parenthesisConsumed)) {
+//                    return WRONG;
+//                }
                 parenthesisConsumed.pop();
             }
         }
