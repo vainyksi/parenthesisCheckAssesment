@@ -17,7 +17,7 @@ public class ParenthesisCheckTest {
             Character character = str.charAt(i);
             if (isStartParenthesis(character)) {
                 parenthesisConsumed.push(character);
-            } else if (isEndParenthesis(character)) {
+            } else if (isEndParenthesis(character, parenthesisConsumed.peek())) {
                 if (parenthesisConsumed.isEmpty()) {
                     return WRONG;
                 }
@@ -26,12 +26,6 @@ public class ParenthesisCheckTest {
         }
 
         return parenthesisConsumed.isEmpty() ? OK : WRONG;
-
-//        if (containsParenthesis(str)) {
-//            return checkParenthesisParity(str);
-//        } else {
-//            return OK;
-//        }
     }
 
     private static boolean isEndParenthesis(Character character) {
@@ -48,13 +42,6 @@ public class ParenthesisCheckTest {
     }
 
     private static boolean containsParenthesis(String str) {
-//        List<Pair> listOfPairs = List.of(
-//                new Pair("(", ")"),
-//                new Pair("[", "]"),
-//                new Pair("{", "}")
-//        );
-//
-//        return str.chars().anyMatch(charIntValue -> listOfPairs.stream().anyMatch(pair -> pair.contains(charIntValue)));
 
         return str.contains("(")
                 || str.contains(")")
