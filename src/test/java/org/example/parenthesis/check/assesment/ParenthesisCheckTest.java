@@ -20,12 +20,14 @@ public class ParenthesisCheckTest {
     }
 
     private static int checkParenthesisParity(String str) {
-        return 0;
+
+
+        return WRONG;
     }
 
     private static boolean containsParenthesis(String str) {
-        return str.indexOf("(") >= 0
-                || str.indexOf(")") >= 0;
+        return str.contains("(")
+                || str.contains(")");
     }
 
     @Test
@@ -37,6 +39,11 @@ public class ParenthesisCheckTest {
     @Test
     void checkEmptyString() {
         Assertions.assertEquals(OK, checkParenthesis(""));
+    }
+
+    @Test
+    void checkBasicParenthesisNotClosed() {
+        Assertions.assertEquals(WRONG, checkParenthesis("("));
     }
 
     @Test
