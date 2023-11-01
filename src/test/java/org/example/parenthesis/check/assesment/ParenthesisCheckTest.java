@@ -45,7 +45,9 @@ public class ParenthesisCheckTest {
         };
     }
 
-    private static boolean isEndParenthesis(Character character, Stack<Character> peek) {
+    private static boolean isEndParenthesis(Character character, Stack<Character> consumed) {
+        Character peek = consumed.peek();
+
         if (peek.equals('(')) {
             return character.equals(')');
         } else if (peek.equals('[')) {
