@@ -16,7 +16,6 @@ public class ParenthesisCheckTest {
         } else {
             return OK;
         }
-
     }
 
     private static int checkParenthesisParity(String str) {
