@@ -26,7 +26,11 @@ public class ParenthesisCheckTest {
 
     private static boolean containsParenthesis(String str) {
         return str.contains("(")
-                || str.contains(")");
+                || str.contains(")")
+                || str.contains("[")
+                || str.contains("]")
+                || str.contains("{")
+                || str.contains("}");
     }
 
     @Test
