@@ -18,6 +18,9 @@ public class ParenthesisCheckTest {
             if (isStartParenthesis(character)) {
                 parenthesisConsumed.push(character);
             } else if (isEndParenthesis(character) && !parenthesisConsumed.isEmpty()) {
+                if (parenthesisConsumed.isEmpty()) {
+                    return WRONG;
+                }
                 parenthesisConsumed.pop();
             }
         }
