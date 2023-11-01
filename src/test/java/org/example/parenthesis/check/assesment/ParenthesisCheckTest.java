@@ -24,11 +24,9 @@ public class ParenthesisCheckTest {
                     }
 
 
-                    final boolean ret = isCorrectEnd(character, parenthesisConsumed.peek());
-
-                    System.out.println(ret);
-
-                    parenthesisConsumed.pop();
+                    if (isCorrectEnd(character, parenthesisConsumed.peek())) {
+                        parenthesisConsumed.pop();
+                    }
                 }
             }
         }
@@ -36,17 +34,16 @@ public class ParenthesisCheckTest {
         return parenthesisConsumed.isEmpty() ? OK : WRONG;
     }
 
-    private static boolean isCorrectEnd(Character character, Character parenthesisConsumed) {
-        final boolean ret;
-        Character peek = parenthesisConsumed.peek();
-        if (peek.equals('(')) {
-            ret = character.equals(')');
-        } else if (peek.equals('[')) {
-            ret = character.equals('}');
-        } else if (peek.equals('{')) {
-            ret = character.equals('}');
+    private static boolean isCorrectEnd(Character character, Character lastOpenParenthesis) {
+        if (lastOpenParenthesis.equals('(')) {
+            return character.equals(')');
+        } else if (lastOpenParenthesis.equals('[')) {
+            return character.equals('}');
+        } else if (lastOpenParenthesis.equals('{')) {
+            return character.equals('}');
         }
-        return ret;
+
+        return false;
     }
 
     private static boolean isCorrectType(Character character, Stack<Character> parenthesisConsumed) {
