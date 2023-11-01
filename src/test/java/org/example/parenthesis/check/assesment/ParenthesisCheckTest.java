@@ -93,6 +93,7 @@ public class ParenthesisCheckTest {
     @Test
     void checkMultipleParenthesisAreOk() {
         Assertions.assertEquals(OK, checkParenthesis("()[]{}"));
+        Assertions.assertEquals(OK, checkParenthesis("(aa)aa[aa]aa{aa}"));
     }
 
     private static class Pair {
