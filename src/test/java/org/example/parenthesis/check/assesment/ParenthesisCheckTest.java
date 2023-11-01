@@ -24,7 +24,7 @@ public class ParenthesisCheckTest {
                     }
 
 
-                    final boolean ret = isCorrectEnd(character, parenthesisConsumed);
+                    final boolean ret = isCorrectEnd(character, parenthesisConsumed.peek());
 
                     System.out.println(ret);
 
