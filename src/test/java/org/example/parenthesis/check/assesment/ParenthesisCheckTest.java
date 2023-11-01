@@ -36,7 +36,7 @@ public class ParenthesisCheckTest {
         System.out.println(str);
         System.out.println(listOfPairs);
         System.out.println(
-            str.chars().anyMatch(value -> listOfPairs.stream().anyMatch(pair -> pair.start))
+            str.chars().anyMatch(value -> listOfPairs.stream().anyMatch(pair -> pair.start==value || pair.end==value))
         );
 
         return str.contains("(")
