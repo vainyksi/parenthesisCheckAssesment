@@ -87,7 +87,14 @@ public class ParenthesisCheckTest {
             this.end = end.charAt(0);
         }
 
-        //        ArrayList<ParenthesisPair> parenthesisPairs = new ArrayList<ParenthesisPair>();
+        @Override
+        public String toString() {
+            return "Pair{" +
+                    "start=" + start +
+                    ", end=" + end +
+                    '}';
+        }
+//        ArrayList<ParenthesisPair> parenthesisPairs = new ArrayList<ParenthesisPair>();
 //        for (ParenthesisPair parenthesisPair : parenthesisPairs) {
 //            if (str.contains(parenthesisPair.getStart())
 //                    && str.contains(parenthesisPair.getEnd())) {
