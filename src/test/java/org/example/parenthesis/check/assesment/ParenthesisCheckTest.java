@@ -21,12 +21,19 @@ public class ParenthesisCheckTest {
                 if (parenthesisConsumed.isEmpty()) {
                     return WRONG;
                 }
-                if (checkParenthesisType(character))
+                if (isCorrectType(character, parenthesisConsumed)) {
+                    return WRONG;
+                }
                 parenthesisConsumed.pop();
             }
         }
 
         return parenthesisConsumed.isEmpty() ? OK : WRONG;
+    }
+
+    private static boolean isCorrectType(Character character) {
+
+        return false;
     }
 
     private static boolean isEndParenthesis(Character character) {
