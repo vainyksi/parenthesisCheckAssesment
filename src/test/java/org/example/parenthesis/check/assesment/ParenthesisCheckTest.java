@@ -33,6 +33,7 @@ public class ParenthesisCheckTest {
         );
 
         str.chars().forEach(System.out::println);
+        listOfPairs.get(0).start.chars().forEach(System.out::println);
 
         return str.contains("(")
                 || str.contains(")")
@@ -69,9 +70,14 @@ public class ParenthesisCheckTest {
     }
 
     private static class Pair {
-        public Pair(String start, String end) {
+        final String start;
+        final String end;
 
+        public Pair(String start, String end) {
+            this.start = start;
+            this.end = end;
         }
+
         //        ArrayList<ParenthesisPair> parenthesisPairs = new ArrayList<ParenthesisPair>();
 //        for (ParenthesisPair parenthesisPair : parenthesisPairs) {
 //            if (str.contains(parenthesisPair.getStart())
