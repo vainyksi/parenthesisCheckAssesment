@@ -15,7 +15,7 @@ public class ParenthesisCheckTest {
         Stack<Character> parenthesisConsumed = new Stack<>();
         for (int i = 0; i < str.length(); i++) {
             Character character = str.charAt(i);
-            if (isParenthesisStart(character)) {
+            if (isStartParenthesis(character)) {
                 parenthesisConsumed.push(character);
             } else {
                 if (isEndParenthesis(character)) {
@@ -49,7 +49,7 @@ public class ParenthesisCheckTest {
         return Set.of(')', ']', '}').contains(character);
     }
 
-    private static boolean isParenthesisStart(Character character) {
+    private static boolean isStartParenthesis(Character character) {
         return Set.of('(', '[', '{').contains(character);
     }
 
