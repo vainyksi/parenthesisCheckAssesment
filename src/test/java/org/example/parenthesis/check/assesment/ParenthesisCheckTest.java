@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ParenthesisCheckTest {
 
@@ -25,6 +26,14 @@ public class ParenthesisCheckTest {
     }
 
     private static boolean containsParenthesis(String str) {
+        List<Pair> listOfPairs = List.of(
+                new Pair("(", ")"),
+                new Pair("[", "]"),
+                new Pair("{", "}")
+        );
+
+        str.chars().forEach(System.out::println);
+
         return str.contains("(")
                 || str.contains(")")
                 || str.contains("[")
@@ -59,7 +68,10 @@ public class ParenthesisCheckTest {
         Assertions.assertEquals(OK, checkParenthesis("()"));
     }
 
-    private static class ParenthesisPair {
+    private static class Pair {
+        public Pair(String start, String end) {
+
+        }
         //        ArrayList<ParenthesisPair> parenthesisPairs = new ArrayList<ParenthesisPair>();
 //        for (ParenthesisPair parenthesisPair : parenthesisPairs) {
 //            if (str.contains(parenthesisPair.getStart())
