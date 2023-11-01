@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
+import java.util.Stack;
 
 public class ParenthesisCheckTest {
 
@@ -11,15 +12,30 @@ public class ParenthesisCheckTest {
     private static final int WRONG = 0;
 
     public static int checkParenthesis(String str) {
-        if (containsParenthesis(str)) {
-            return checkParenthesisParity(str);
-        } else {
-            return OK;
+        Stack<Character> parenthesisConsumed = new Stack<>();
+        for (int i = 0; i < str.length(); i++) {
+            Character character = str.charAt(i);
+            if (isStartParenthesis(character)) {
+                parenthesisConsumed.push(character);
+            } else if (isEndParenthesis(character)) {
+                parenthesisConsumed.pop();
+            }
         }
+
+        return parenthesisConsumed.isEmpty() ? OK : WRONG;
+
+//        if (containsParenthesis(str)) {
+//            return checkParenthesisParity(str);
+//        } else {
+//            return OK;
+//        }
+    }
+
+    private static boolean isStartParenthesis(Character character) {
+        return List.of('(', '[', '{').contains(character);
     }
 
     private static int checkParenthesisParity(String str) {
-
 
         return WRONG;
     }
