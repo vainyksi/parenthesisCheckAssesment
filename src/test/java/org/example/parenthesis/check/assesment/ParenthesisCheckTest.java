@@ -75,7 +75,7 @@ public class ParenthesisCheckTest {
 
     private static class Pair {
         final char start;
-        final String end;
+        final char end;
 
         public Pair(char start, char end) {
             this.start = start;
