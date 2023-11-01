@@ -97,37 +97,4 @@ public class ParenthesisCheckTest {
 //        Assertions.assertEquals(OK, checkParenthesis("{a(b[c]b)a}"));
     }
 
-    private static class Pair {
-        final char start;
-        final char end;
-
-        public Pair(char start, char end) {
-            this.start = start;
-            this.end = end;
-        }
-
-        public Pair(String start, String end) {
-            this.start = start.charAt(0);
-            this.end = end.charAt(0);
-        }
-
-        @Override
-        public String toString() {
-            return "Pair{" +
-                    "start=" + start +
-                    ", end=" + end +
-                    '}';
-        }
-
-        public boolean contains(int charIntValue) {
-            return this.start == charIntValue || this.end == charIntValue;
-        }
-//        ArrayList<ParenthesisPair> parenthesisPairs = new ArrayList<ParenthesisPair>();
-//        for (ParenthesisPair parenthesisPair : parenthesisPairs) {
-//            if (str.contains(parenthesisPair.getStart())
-//                    && str.contains(parenthesisPair.getEnd())) {
-//                return OK;
-//            }
-//        }
-    }
 }
