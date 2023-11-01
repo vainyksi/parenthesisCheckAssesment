@@ -36,7 +36,7 @@ public class ParenthesisCheckTest {
         return parenthesisConsumed.isEmpty() ? OK : WRONG;
     }
 
-    private static boolean isCorrectEnd(Character character, Stack<Character> parenthesisConsumed) {
+    private static boolean isCorrectEnd(Character character, Character parenthesisConsumed) {
         final boolean ret;
         Character peek = parenthesisConsumed.peek();
         if (peek.equals('(')) {
