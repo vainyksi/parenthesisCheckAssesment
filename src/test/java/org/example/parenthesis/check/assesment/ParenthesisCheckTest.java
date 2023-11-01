@@ -28,11 +28,7 @@ public class ParenthesisCheckTest {
         return parenthesisConsumed.isEmpty() ? OK : WRONG;
     }
 
-    private static Character getLastPreviousParenthesis(Stack<Character> parenthesisConsumed) {
-        return parenthesisConsumed.peek();
-    }
-
-    private static boolean isEndParenthesisOfPreviouslyCOnsumed(Character character, Stack<Character> lastOpenParenthesis) {
+    private static boolean isEndParenthesisOfPreviouslyCOnsumed(Character character, Stack<Character> consumed) {
         return List.of(')', ']', '}').contains(character);
     }
 
