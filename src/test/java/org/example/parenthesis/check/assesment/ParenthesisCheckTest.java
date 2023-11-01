@@ -11,9 +11,23 @@ public class ParenthesisCheckTest {
     private static final int WRONG = 0;
 
     public static int checkParenthesis(String str) {
-        ArrayList<ParenthesisPair> parenthesisPairs = new ArrayList<ParenthesisPair>();
-        parenthesisPairs
-        return str.contains();
+        if (containsParenthesis(str)) {
+            return WRONG;
+        } else {
+            return OK;
+        }
+//        ArrayList<ParenthesisPair> parenthesisPairs = new ArrayList<ParenthesisPair>();
+//        for (ParenthesisPair parenthesisPair : parenthesisPairs) {
+//            if (str.contains(parenthesisPair.getStart())
+//                    && str.contains(parenthesisPair.getEnd())) {
+//                return OK;
+//            }
+//        }
+    }
+
+    private static boolean containsParenthesis(String str) {
+        return str.indexOf("(") >= 0
+                || str.indexOf(")") >= 0;
     }
 
     @Test
