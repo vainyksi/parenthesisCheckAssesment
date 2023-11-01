@@ -16,13 +16,7 @@ public class ParenthesisCheckTest {
         } else {
             return OK;
         }
-//        ArrayList<ParenthesisPair> parenthesisPairs = new ArrayList<ParenthesisPair>();
-//        for (ParenthesisPair parenthesisPair : parenthesisPairs) {
-//            if (str.contains(parenthesisPair.getStart())
-//                    && str.contains(parenthesisPair.getEnd())) {
-//                return OK;
-//            }
-//        }
+
     }
 
     private static boolean containsParenthesis(String str) {
@@ -41,6 +35,18 @@ public class ParenthesisCheckTest {
         Assertions.assertEquals(OK, checkParenthesis(""));
     }
 
+    @Test
+    void checkBasicParenthesis() {
+        Assertions.assertEquals(OK, checkParenthesis("()"));
+    }
+
     private static class ParenthesisPair {
+        //        ArrayList<ParenthesisPair> parenthesisPairs = new ArrayList<ParenthesisPair>();
+//        for (ParenthesisPair parenthesisPair : parenthesisPairs) {
+//            if (str.contains(parenthesisPair.getStart())
+//                    && str.contains(parenthesisPair.getEnd())) {
+//                return OK;
+//            }
+//        }
     }
 }
