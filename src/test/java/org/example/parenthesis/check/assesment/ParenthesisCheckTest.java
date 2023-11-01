@@ -12,11 +12,15 @@ public class ParenthesisCheckTest {
 
     public static int checkParenthesis(String str) {
         if (containsParenthesis(str)) {
-            return WRONG;
+            return checkParenthesisParity(str);
         } else {
             return OK;
         }
 
+    }
+
+    private static int checkParenthesisParity(String str) {
+        return 0;
     }
 
     private static boolean containsParenthesis(String str) {
@@ -36,7 +40,7 @@ public class ParenthesisCheckTest {
     }
 
     @Test
-    void checkBasicParenthesis() {
+    void checkBasicParenthesisAreOk() {
         Assertions.assertEquals(OK, checkParenthesis("()"));
     }
 
