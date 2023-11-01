@@ -32,8 +32,10 @@ public class ParenthesisCheckTest {
                 new Pair("{", "}")
         );
 
-        str.chars().forEach(System.out::println);
-        listOfPairs.get(0).start.chars().forEach(System.out::println);
+//        str.chars().forEach(System.out::println);
+//        listOfPairs.get(0).start.chars().forEach(System.out::println);
+        System.out.println(str);
+        System.out.println(listOfPairs);
         System.out.println(
             str.chars().anyMatch(value -> listOfPairs.contains(value))
         );
