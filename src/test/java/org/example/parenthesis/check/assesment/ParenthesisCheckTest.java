@@ -31,7 +31,7 @@ public class ParenthesisCheckTest {
         return parenthesisConsumed.isEmpty() ? OK : WRONG;
     }
 
-    private static boolean isCorrectType(Character character) {
+    private static boolean isCorrectType(Character character, Stack<Character> parenthesisConsumed) {
 
         return false;
     }
