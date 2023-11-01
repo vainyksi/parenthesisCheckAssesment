@@ -56,7 +56,9 @@ public class ParenthesisCheckTest {
     @Test
     void checkParenthesisOrderAndParity() {
         String strPositive = "xxx(aaa)ahoj(tuky[tuk]){hoj}";
+        Assertions.assertEquals(OK, checkParenthesis(strPositive));
         String strNegative = "xxx(zz(kk)hh]pp";
+        Assertions.assertEquals(WRONG, checkParenthesis(strNegative));
     }
 
     @Test
