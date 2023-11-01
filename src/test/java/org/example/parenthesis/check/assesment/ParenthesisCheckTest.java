@@ -32,7 +32,7 @@ public class ParenthesisCheckTest {
         return parenthesisConsumed.peek();
     }
 
-    private static boolean isEndParenthesisOfPreviouslyCOnsumed(Character character, Character lastOpenParenthesis) {
+    private static boolean isEndParenthesisOfPreviouslyCOnsumed(Character character, Stack<Character> lastOpenParenthesis) {
         return List.of(')', ']', '}').contains(character);
     }
 
