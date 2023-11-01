@@ -24,9 +24,9 @@ public class ParenthesisCheckTest {
                     }
 
 
-                    if (isCorrectEnd(character, parenthesisConsumed.peek())) {
+//                    if (isCorrectEnd(character, parenthesisConsumed.peek())) {
                         parenthesisConsumed.pop();
-                    }
+//                    }
                 }
             }
         }
