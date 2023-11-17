@@ -1,0 +1,26 @@
+Index: src/test/java/org/example/parenthesis/check/assesment/ParenthesisCheckTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/test/java/org/example/parenthesis/check/assesment/ParenthesisCheckTest.java b/src/test/java/org/example/parenthesis/check/assesment/ParenthesisCheckTest.java
+--- a/src/test/java/org/example/parenthesis/check/assesment/ParenthesisCheckTest.java	(date 1698876150944)
++++ b/src/test/java/org/example/parenthesis/check/assesment/ParenthesisCheckTest.java	
+@@ -18,7 +18,7 @@
+             if (isStartCharacter(character)) {
+                 parenthesisConsumed.push(character);
+             } else {
+-                if (isEndCharacter(character)) {
++                if (isEndParenthesis(character)) {
+                     if (parenthesisConsumed.isEmpty()) {
+                         return WRONG;
+                     }
+@@ -45,7 +45,7 @@
+         return false;
+     }
+ 
+-    private static boolean isEndCharacter(Character character) {
++    private static boolean isEndParenthesis(Character character) {
+         return Set.of(')', ']', '}').contains(character);
+     }
+ 

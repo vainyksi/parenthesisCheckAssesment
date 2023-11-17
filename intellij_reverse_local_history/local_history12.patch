@@ -1,0 +1,129 @@
+Index: src/test/java/org/example/parenthesis/check/assesment/ParenthesisCheckTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/test/java/org/example/parenthesis/check/assesment/ParenthesisCheckTest.java b/src/test/java/org/example/parenthesis/check/assesment/ParenthesisCheckTest.java
+--- a/src/test/java/org/example/parenthesis/check/assesment/ParenthesisCheckTest.java	(date 1698876150944)
++++ b/src/test/java/org/example/parenthesis/check/assesment/ParenthesisCheckTest.java	
+@@ -3,8 +3,7 @@
+ import org.junit.jupiter.api.Assertions;
+ import org.junit.jupiter.api.Test;
+ 
+-import java.util.Set;
+-import java.util.Stack;
++import java.util.ArrayList;
+ 
+ public class ParenthesisCheckTest {
+ 
+@@ -12,53 +11,27 @@
+     private static final int WRONG = 0;
+ 
+     public static int checkParenthesis(String str) {
+-        Stack<Character> parenthesisConsumed = new Stack<>();
+-        for (int i = 0; i < str.length(); i++) {
+-            Character character = str.charAt(i);
+-            if (isStartCharacter(character)) {
+-                parenthesisConsumed.push(character);
+-            } else {
+-                if (isEndCharacter(character)) {
+-                    if (parenthesisConsumed.isEmpty()) {
+-                        return WRONG;
+-                    }
++        if (containsParenthesis(str)) {
++            return checkParenthesisParity(str);
++        } else {
++            return OK;
++        }
+ 
+-                    if (isCorrectEnd(character, parenthesisConsumed.peek())) {
+-                        parenthesisConsumed.pop();
+-                    }
+-                }
+-            }
+-        }
++    }
+ 
+-        return parenthesisConsumed.isEmpty() ? OK : WRONG;
++    private static int checkParenthesisParity(String str) {
++        return 0;
+     }
+ 
+-    private static boolean isCorrectEnd(Character character, Character lastOpenParenthesis) {
+-        if (lastOpenParenthesis.equals('(')) {
+-            return character.equals(')');
+-        } else if (lastOpenParenthesis.equals('[')) {
+-            return character.equals(']');
+-        } else if (lastOpenParenthesis.equals('{')) {
+-            return character.equals('}');
+-        }
+-
+-        return false;
+-    }
+-
+-    private static boolean isEndCharacter(Character character) {
+-        return Set.of(')', ']', '}').contains(character);
+-    }
+-
+-    private static boolean isStartCharacter(Character character) {
+-        return Set.of('(', '[', '{').contains(character);
++    private static boolean containsParenthesis(String str) {
++        return str.indexOf("(") >= 0
++                || str.indexOf(")") >= 0;
+     }
+ 
+     @Test
+     void checkParenthesisOrderAndParity() {
+         String strPositive = "xxx(aaa)ahoj(tuky[tuk]){hoj}";
+-        Assertions.assertEquals(OK, checkParenthesis(strPositive));
+         String strNegative = "xxx(zz(kk)hh]pp";
+-        Assertions.assertEquals(WRONG, checkParenthesis(strNegative));
+     }
+ 
+     @Test
+@@ -66,37 +39,18 @@
+         Assertions.assertEquals(OK, checkParenthesis(""));
+     }
+ 
+-    @Test
+-    void checkParenthesisNotClosed() {
+-        Assertions.assertEquals(WRONG, checkParenthesis("("));
+-        Assertions.assertEquals(WRONG, checkParenthesis(")"));
+-        Assertions.assertEquals(WRONG, checkParenthesis("["));
+-        Assertions.assertEquals(WRONG, checkParenthesis("]"));
+-        Assertions.assertEquals(WRONG, checkParenthesis("{"));
+-        Assertions.assertEquals(WRONG, checkParenthesis("}"));
+-    }
+-
+     @Test
+     void checkBasicParenthesisAreOk() {
+         Assertions.assertEquals(OK, checkParenthesis("()"));
+     }
+ 
+-    @Test
+-    void checkMultipleParenthesisAreOk() {
+-        Assertions.assertEquals(OK, checkParenthesis("()[]{}"));
+-        Assertions.assertEquals(OK, checkParenthesis("(aa)aa[aa]aa{aa}"));
+-    }
+-
+-    @Test
+-    void checkCombinedParenthesisAreOk() {
+-        Assertions.assertEquals(OK, checkParenthesis("{([])}"));
+-        Assertions.assertEquals(OK, checkParenthesis("{a(b[c]b)a}"));
++    private static class ParenthesisPair {
++        //        ArrayList<ParenthesisPair> parenthesisPairs = new ArrayList<ParenthesisPair>();
++//        for (ParenthesisPair parenthesisPair : parenthesisPairs) {
++//            if (str.contains(parenthesisPair.getStart())
++//                    && str.contains(parenthesisPair.getEnd())) {
++//                return OK;
++//            }
++//        }
+     }
+-
+-    @Test
+-    void checkCombinedParenthesisAreWrong() {
+-        Assertions.assertEquals(WRONG, checkParenthesis("([)]"));
+-        Assertions.assertEquals(OK, checkParenthesis("{a(b[c]b)a}"));
+-    }
+-
+ }
